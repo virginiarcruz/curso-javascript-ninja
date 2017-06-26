@@ -2,13 +2,13 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var myVar = [ 'virginia', 2, 12, true, null ];
+var myVar = [ 'virginia', 2, {a: 1}, true, null ];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 
-var myArr = [ 'virginia', 2, 12, true, null ];
+var myArr = [ 'virginia', 2987, {a: 1}, true, null  ];
 
 function myFunction (myArg) {
     return myArg;
@@ -18,11 +18,7 @@ function myFunction (myArg) {
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 
-function myFunction2 (myArg) {
-    return myArg[1];
-}
-
-console.log (myFunction2(myArr));
+console.log ( myFunction (myArr)[1] );
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -30,6 +26,11 @@ segundo, um número. A função deve retornar um índice do array que foi passad
 no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
+function myFunction2 (arr, indiceArr) {
+    return arr [indiceArr];
+}
+
+/* 
 function myFuncArr () {
     return {
         prop1: ['vick', 2, 3, 4, 5],
@@ -38,20 +39,23 @@ function myFuncArr () {
 }
 //var indiceArray = myFuncArr();
 myFuncArr().prop1[myFuncArr().prop2];
+ */
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var myVar2 = ['vick', 1, true, null, NaN];
+var myVar2 = ['vick', 1, true, [1, 2, 3], NaN];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 
-function myFuncArr() {
-    return myVar2;
-}
+console.log ( myFunction2(myVar2,0) );
+console.log ( myFunction2(myVar2,1) );
+console.log ( myFunction2(myVar2,2) );
+console.log ( myFunction2(myVar2,3) );
+console.log ( myFunction2(myVar2,4) );
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -69,13 +73,13 @@ os livros.
 */
 
 function book (livroName) {
-    var objFunc = {
+    var todosLivros= {
         livro1: {
             quantidadePaginas: 40,
             autor: 'vick',
             editora: 'Podim',
         },
-        livro2: { 
+        'Nome do Livro 2': { 
             quantidadePaginas: 90,
             autor: 'harry',
             editora: 'JusVita',
@@ -87,7 +91,8 @@ function book (livroName) {
         }
     };
 
-    return objFunc;
+    return !livroName ? todosLivros : todosLivros [livroName ]
+
 }
 
 book().livro3;
