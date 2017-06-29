@@ -37,20 +37,21 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(posicao) {
-    if (posicao > 4) {
-        return teams[posicao];
+    if (posicao < 1 || posicao > 5) {
+        console.log ('O time que está em' + posicao + 'º lugar é o' + teams [posicao -1] + '.');
     } else {
         console.log ("Não temos a informação do time que está nessa posição.");
     }
 }
 
-console.log ('O time que está em' + [POSIÇÃO] + 'º lugar é o' + showTeamPosition(2) + '.');
-
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+showTeamPosition(1);
+showTeamPosition(3);
+showTeamPosition(5);
+showTeamPosition(6);
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -76,29 +77,27 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 function convertToHex (cor) {
     switch (cor) {
+        var hexad;
         case 'red':
             var hexad = '#FF0000';
-            console.log ('O hexadecimal para a cor' + cor + "é " + hexad + ".");
             break;
         case 'white':
             var hexad = '#ffffff';
-            console.log ('O hexadecimal para a cor ' + cor + " é " + hexad + ".");
             break;
         case 'black':
             var hexad = '#0000';
-            console.log ('O hexadecimal para a cor ' + cor + " é " + hexad + ".");
             break;
         case 'yellow':
             var hexad = '#fDDCff';
-            console.log ('O hexadecimal para a cor ' + cor + " é " + hexad + ".");
             break;
          case 'gray':
             var hexad = '#d4d4d4';
-            console.log ('O hexadecimal para a cor ' + cor + " é " + hexad + ".");
             break;
         default : 
             console.log("Não temos o equivalente hexadecimal para " + cor + ".");
     }
+    console.log ('O hexadecimal para a cor ' + cor + " é " + hexad + ".");
+
 }
 
 /*
