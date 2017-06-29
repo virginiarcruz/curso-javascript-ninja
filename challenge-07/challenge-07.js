@@ -9,7 +9,7 @@ A função deverá retornar o array atualizado.
 */
 function addItem (itemArr) {
     arr.push(itemArr);
-    console.log(arr);
+    return arr;
 }
 
 addItem(7);
@@ -31,7 +31,7 @@ console.log(arr[6][1]);
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
 "O primeiro array tem [QUANTIDADE DE ITENS] itens."
 */
-console.log(arr.length);
+console.log("O primeiro array tem " + arr.length + " itens." );
 
 /*
 Agora mostre no console quantos itens tem o segundo array criado, com a frase:
@@ -46,7 +46,7 @@ pares entre 10 e 20, inclusive esses 2.
 console.log( 'Números pares entre 10 e 20:' );
 var num = 10;
 
-while (num >= 10 && num <= 20) {
+while ( num <= 20 ) {
     num % 2 === 0 ? console.log(num) : '';
     num++
 }
@@ -57,8 +57,8 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 console.log( 'Números ímpares entre 10 e 20:' );
 var num = 10;
 
-while (num >= 10 && num <= 20) {
-    num % 2 === 1 ? console.log(num) : '';
+while (num < 20) {
+    num % 2 !== 0 ? console.log(num) : '';
     num++
 }
 
@@ -70,11 +70,11 @@ Só vamos mudar o range:
 */
 console.log( 'Números pares entre 100 e 120:' );
 
-for (var num = 100; num <=120; num++) {
+for (var num = 100; num <= 120; num++) {
     num % 2 === 0 ? console.log(num) : '';
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
-for (var num = 100; num <=120; num++) {
+for (var num = 100; num < 120; num++) {
     num % 2 === 1 ? console.log(num) : '';
 }
