@@ -10,12 +10,7 @@
     Qual loop você deve usar para que essa mensagem seja mostrada no console?
     */
     var once = false;
-    while (once === true) {
-        console.log ('Entrou ao menos uma vez!');
-    }
-
-    // ou
-
+    
     do {
         console.log ('Entrou ao menos uma vez!');
     }  while (once === true) ;
@@ -41,9 +36,10 @@
     Após o loop, mostre a frase:
     'The person has [COUNTER] properties'
     */
-    var counter = person.length;
+    var counter = 0;
     for (var prop in person) {
         console.log('The '+ prop + 'of person is ' + person[prop]);
+        counter++;
     }
     console.log( 'The person has ' + counter + ' properties');
 
@@ -54,24 +50,26 @@
     Após a função, mostrar a mensagem no console:
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
-    function moreThan(){
-        if( person.age > 25) {
+    function moreThan(age){
+       /*  if( person.age > 25) {
             return true;
         }
-        return false;
+        return false; */
+        return person.age > age;
     }
-    console.log('The person has more than 25 years old? ' + moreThan() )
+    console.log('The person has more than 25 years old? ' + moreThan(26) )
 
     /*
     Faça um loop de 0 a 20, que adicione cada número como um item de um
     array chamado `numbers`. Se o contador for maior que 10, saia do loop.
     Mostre no console os números no array.
     */
-    var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 , 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-    for (var i = 0; i= numbers.length; i++) {
+    var numbers = [];
+    for (var i = 0; i < 20; i++) {
         if (i > 10) {
             break;
         }
+        number.push(i); // adiciona itens no array
     console.log( 'De 0 a 10: ' + i );
     }
     
@@ -83,11 +81,13 @@
     Mostrar no console os números do array.
     */
 
-    for (var i = 0; i= numbers.length; i++) {
+    for (var i = 0; i<= 20; i++) {
         if (i % 2 !== 0) {
             continue;   
         }
-        console.log( 'Pares de 0 a 20: ' + i );
+        numbers.push(i);
     }
+    console.log( numbers );
+
 
 } )();
