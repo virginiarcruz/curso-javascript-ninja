@@ -70,8 +70,9 @@
             break;
         }
         number.push(i); // adiciona itens no array
-    console.log( 'De 0 a 10: ' + i );
     }
+    console.log( numbers );
+
     
 
     /*
@@ -87,7 +88,6 @@
         }
         numbers.push(i);
     }
-    console.log( numbers );
 
 
 } )();
