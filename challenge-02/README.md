@@ -3,35 +3,43 @@
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
 
 ```js
+
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-function argumentos (x,y) {
-    return x + y;
+function myFunction(x,y) {
+  return x + y;
 }
 
+
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var desafio01 = argumentos(4,5) + 5; 
+var myVar = (myFunction(10,5) ) + 5;
+
 
 // Qual o valor atualizado dessa variável?
-14
+75
+
 
 // Declare uma nova variável, sem valor.
-var desafio02;
+var myVarNew;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function desafioFuncao () {
-    desafio02 = 12;
-    return 'O valor da variável agora é' + desafio02;
+
+function valorFunction () {
+  myvarNew = 30;
+  return 'O valor da variável agora é' + myvarNew;
 }
 
+
 // Invoque a função criada acima.
- desafioFuncao();
+valorFunction();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* o valor é 12 */
+/* o valor da variavel é 30 */
+
+
 
 /*
 Crie uma função com as seguintes características:
@@ -40,22 +48,25 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function newFunction(a,b,c) {
-    if (a === undefined || b === undefined || c === undefined) {
-        return 'Preencha todos os valores corretamente!';
-    } else {
-        return (a * b * c) + 2;
-    }
+
+function valores (a,b,c) 
+  if (a == undefined | b == undefined | c ==undefined ) {
+     return 'Preencha todos os valores corretamente!';
+  }  else {
+      return (a * b * c ) + 2;
+     }
 }
 
+
 // Invoque a função criada acima, passando só dois números como argumento.
-newFunction(2,3);
+function(10,5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 //Preencha todos os valores corretamente
 
+
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-newFunction ( 1, 2, 3);
+function(1,2,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 8
@@ -69,22 +80,28 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function newFunction2 (a,b,c) {
-    if (a !== undefined && b === undefined && c === undefined) {
-        return a;
-    } else if (a !== undefined && b !== undefined && c === undefined) {
-        return a + b;
-    } else if (a !== undefined && b !== undefined && c !== undefined) {
-        return (a + b) / c;
-    } else if (a === undefined && b === undefined && c === undefined){
-        return false;
-    } else {
-        return null;
-    }
+
+function myNewFunction(a,b,c) {
+  if ( a != undefined && b == undefined && c == undefined) {
+    return a;
+  } else if ( a != undefined && b != undefined && c == undefined)  {
+    return a + b;
+  } else if ( a != undefined && b != undefined && c != undefined) {
+    return (a + b ) / c;
+  } else if ( a == undefined && b == undefined && c == undefined) {
+    return false;
+  } else
+  return null
 }
 
+
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-newFunction2 (2); // 1 argumento
-newFunction2 (2,3); // 2 argumentos
-newFunction2 (2,3,4); // 3 argumentos
-newFunction2 (); // nenhum argumento
+
+myNewFunction(10); // 10
+myNewFunction(10,20); // 30
+myNewFunction(10,20,30); // 1
+myNewFunction(); false
+
+
+
+// Revisao
