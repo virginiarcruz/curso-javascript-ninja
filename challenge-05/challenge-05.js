@@ -2,23 +2,25 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var myVar = [ 'virginia', 2, {a: 1}, true, null ];
+
+var myArray = ['Vick', 2, {funcao:'frontend', false, null} ];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 
-var myArr = [ 'virginia', 2987, {a: 1}, true, null  ];
-
-function myFunction (myArg) {
-    return myArg;
+function myFunction(myArg) {
+  return myArg;
 }
+
+
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 
-console.log ( myFunction (myArr)[1] );
+console.log(myFunction( myArg)[2]);
+
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -26,36 +28,31 @@ segundo, um número. A função deve retornar um índice do array que foi passad
 no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
-function myFunction2 (arr, indiceArr) {
-    return arr [indiceArr];
+
+
+function arrayNumber ( myArray, myNumber ) {
+  return myArray [myNumber];
 }
 
-/* 
-function myFuncArr () {
-    return {
-        prop1: ['vick', 2, 3, 4, 5],
-        prop2: 2,
-    }
-}
-//var indiceArray = myFuncArr();
-myFuncArr().prop1[myFuncArr().prop2];
- */
+
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var myVar2 = ['vick', 1, true, [1, 2, 3], NaN];
+
+var myNewArray = ['meu nome', 2017, true, {objeto: 'prop1'}, NaN  ];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 
-console.log ( myFunction2(myVar2,0) );
-console.log ( myFunction2(myVar2,1) );
-console.log ( myFunction2(myVar2,2) );
-console.log ( myFunction2(myVar2,3) );
-console.log ( myFunction2(myVar2,4) );
+arrayNumber(myNewArray, 0);
+arrayNumber(myNewArray, 1);
+arrayNumber(myNewArray, 2);
+arrayNumber(myNewArray, 3);
+arrayNumber(myNewArray, 4);
+
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -72,36 +69,35 @@ propriedades:
 os livros.
 */
 
-function book (livroName) {
-    var todosLivros= {
-        livro1: {
-            quantidadePaginas: 40,
-            autor: 'vick',
-            editora: 'Podim',
-        },
-        'Nome do Livro 2': { 
-            quantidadePaginas: 90,
-            autor: 'harry',
-            editora: 'JusVita',
-        }, 
-        livro3: {
-            quantidadePaginas: 140,
-            autor: 'potter',
-            editora: 'Saraiva',
-        }
-    };
+function book (bookName) {
+  var bookList = {
+    book1 : {
+      quantidadePaginas: 30,
+      autor: 'Stephen',
+      editora: 'Atlas'
+    },
+    book2 : {
+      quantidadePaginas: 50,
+      autor: 'Stephenqwe',
+      editora: 'Atlahjas'
+    },
+    book3 : {
+      quantidadePaginas: 3,
+      autor: 'hen',
+      editora: 'As'
+    }
+  }
 
-    return !livroName ? todosLivros : todosLivros [livroName ]
-
+  return !bookName ? bookList : bookList[bookName];
 }
 
-book().livro3;
 
 
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
+
 book();
 
 /*
@@ -111,15 +107,15 @@ usando a frase:
 */
 var fichaLivro = book();
 
-console.log("O livro" + fichaLivro.livro1 + " tem " + fichaLivro.livro1.quantidadePaginas  + " páginas!")
+console.log("O livro" + fichaLivro.book1 + " tem " + fichaLivro.book1.quantidadePaginas  + " páginas!")
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log("O autor do livro " + fichaLivro.livro1 + "é " +fichaLivro.livro1.autor+ ".")
 
+console.log("O autor do livro " +  fichaLivro.book1 + " é " +  fichaLivro.book1.autor);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
@@ -127,4 +123,6 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 
-console.log("O livro " + fichaLivro.livro1 + "foi publicado pela editora " +fichaLivro.livro1.editora + ".")
+console.log("O livro" +   fichaLivro.book1  + "foi publicado pela editora" + fichaLivro.book1.editora + ".")
+
+// Revisão
