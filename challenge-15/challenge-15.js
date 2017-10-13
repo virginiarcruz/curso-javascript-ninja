@@ -87,5 +87,4 @@
   console.log(perla.getFullName() + ' tem ' + perla.addAge(3) + ' anos ');
   console.log(july.getFullName() + ' tem ' + july.addAge(5) + ' anos ');
 
-
 })();
