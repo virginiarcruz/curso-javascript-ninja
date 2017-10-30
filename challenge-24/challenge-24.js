@@ -20,7 +20,7 @@
   var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
 
   function initialize() { // a estrutura da calculadora vai iniciar com esta função.
-      initEvents();
+      initEvents(); // vai iniciar todos o eventos que tivermos
   }
 
   function initEvents (){
@@ -38,7 +38,7 @@
 
 
   function handleClickNumber() {
-    $visor.value += this.value;
+    $visor.value += this.value; // cada vez que clicar no botão atualiza o visor
   }
 
   function handleClickOperation() {
@@ -58,7 +58,7 @@
     });
   }
 
-  function getOperations () {
+  function getOperations () { // pega os valores das operacoes +-x%
     return Array.prototype.map.call($buttonsOperations, function(button) {
       return button.value;
     });
@@ -72,13 +72,13 @@
   }
 
   function handleClickEqual() {
-    $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+    $visor.value = removeLastItemIfItIsAnOperator($visor.value); // remove o último item se for um operador
     var allValues = $visor.value.match(getRegexOperations());
-    $visor.value = allValues.reduce(calculateAllValues);
+    $visor.value = allValues.reduce(calculateAllValues); // a funcao do reduce vai calcular todos os valores, o valor da funcao vai pra dentro do reduce
   }
 
-  function getRegexOperations (){
-    return new RegExp('\\d+[' + getOperations().join('') + ']?', 'g');
+  function getRegexOperations (){ // a regex pura não se consegue passar por string
+    return new RegExp('\\d+[' + getOperations().join('') + ']?', 'g'); //  o join pega a string e junta
   }
 
   function calculateAllValues (accumulated, actual) {
@@ -86,10 +86,10 @@
     var operator = accumulated.split('').pop();
     var lastValue = removeLastItemIfItIsAnOperator(actual);
     var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-    return doOperation(operator, firstValue, lastValue) + lastOperator;
+    return doOperation(operator, firstValue, lastValue) + lastOperator; // ja soma o lastOperador no final que não precisa repetir no switch
   }
 
-  function doOperation (operator, firstValue, lastValue) {
+  function doOperation (operator, firstValue, lastValue) { // funcao que verifica o tipo do operador e dar o resultado
     switch(operator) {
       case '+':
         return Number(firstValue) + Number(lastValue);
